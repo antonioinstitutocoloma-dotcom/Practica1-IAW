@@ -3,6 +3,8 @@ Practica1-IAW
 
 Buenas Profesor, la practica la hice sin un repositorio en github por lo que te pego lo que hice en dicha práctica.
 
+Para arrancar los contenedores hacemos dentro de la carpeta nimbus-docker un docker compose up --build -d
+
 # Práctica 1: Servidores, Proxies y Certificados (NimbusDocs)
 
 Para empezar la práctica, lo primero que hice fue usar Docker Compose para poner a trabajar dos servidores juntos: por un lado Apache, que guarda y sirve las webs, y por otro Nginx, que se pone delante para controlar quién entra y gestionar las conexiones seguras. Para arrancar todo sin complicarnos, ejecuté en la terminal el comando docker compose up --build -d, que se encarga de crear las imágenes desde cero y dejarlas funcionando en segundo plano. Justo después, usé docker compose ps para revisar de un vistazo que los dos contenedores estaban encendidos y listos.
