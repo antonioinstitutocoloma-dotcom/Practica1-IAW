@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  apache-backend:
+    build: ./apache
+    container_name: nimbus_apache
+    volumes:
+      - ./apache/html:/var/www/html
+    networks:
+      - nimbus-net
+
+  nginx-proxy:
+    build: ./nginx
+    container_name: nimbus_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - nimbus-net
+    depends_on:
+      - apache-backend
+
+networks:
+  nimbus-net:
+    driver: bridge
